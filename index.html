@@ -37,6 +37,79 @@
         // numero2= 20;
 
 
+        // alert(numero2);
+
+        // para visualizar algo en la consola del navegador:
+        // console.log(numero2);
+
+        //condicionales
+
+        var numero1 = 10;
+        var nombre = 'Ignacio'
+
+        if (numero1 != 10 && nombre == 'Ignacio'){
+            console.log('verdadero');
+        }
+        else{
+            console.log('falso');
+        }
+
+        //array
+
+        var arreglo = [ 1,5,10, 'Ignacio', true];
+
+        //muestra todos los valores del arreglo
+        alert(arreglo);
+
+        //muestra un valor en especifico del arreglo
+        //considerando que se inicia con el 0
+        alert(arreglo[3]);
+        console.log(arreglo);
+
+        //estructuras de control
+
+        for (var i =0; i<arreglo.length; i++){
+            console.log('valor['+i+'] con for= ' + arreglo[i]);
+        }
+
+        var i = 0;
+        //solo se ejecuta si se cumple la condicion
+        while (i<arreglo.length){
+            console.log('valor con while = '+ arreglo[i]);
+            i++;
+        }
+
+        //ejecuta la accion por lo menos una vez
+        var i = 0;
+        do{
+            console.log('Valor con do while = ' +arreglo[i]);
+            i++;
+
+        }while(i<arreglo.length);
+
+        //switch
+
+        var hora = 8;
+
+        switch(hora){
+            case 10:
+                console.log('son las 10 de la mañana');
+                break;
+            case 15:
+                console.log('son las 3 de la tarde');
+                break;
+            default:
+                console.log('no tengo saludos');
+                break;
+        }
+
+        // funciones
+
+        
+
+        
+
+
 
     </script>
 </body>
