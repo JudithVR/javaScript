@@ -1,8 +1,8 @@
 //se obtiene el elemento con id igual al que se pasa como parametro
-var div1 = document.getElementById("mi_div");
-console.log(div1);
+var h1 = document.getElementById("titulo");
+        console.log(h1);
 
-var div3 = document.getElementById("nombre");
+var div3 = document.getElementById("titulo");
 console.log(div3);
 
 //div.classList.add("mi_clase");
