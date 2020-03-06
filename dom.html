@@ -12,35 +12,94 @@
 <body>
     <div id="mi_div" class="miClase">
         <h1 id="titulo">Para buscar un elemento del DOM</h1>
+        <p id ="parrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt doloribus, pariatur fugit dolor corrupti officiis earum placeat esse maiores molestias, assumenda provident. Repudiandae, excepturi. Reiciendis delectus exercitationem molestiae omnis nostrum?</p>
         <p id="parrafo" class="miClase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, odio magni officiis necessitatibus hic quaerat nobis accusantium ducimus illum, quo dolorem, earum reprehenderit perferendis tempore blanditiis repudiandae praesentium at explicabo.</p>
         <button id="boton">Cambiar</button>
+        <button id="boton2">Csmbiar2</button>
     </div>
 
     <script>
 
+        //para seleccionar el elemento con id = titulo
         var h1 = document.getElementById("titulo");
+
+        //imprime el nodo elemento seleccionado
         console.log(h1);
 
-        var div3 = document.getElementById("boton");
-        console.log(div3);
+        //impriem el nodo texto del nodo elemento selecconado
+        console.log(h1.innerHTML);
 
-        //div.classList.add("mi_clase");
+        //para modificar el contenido del nodo texto seleccionado
 
-        //se obtienen los elementos que tengan la clase igual a lade parametro
-        var div2 = document.getElementsByClassName("miClase");
+        h1.innerHTML = "Para modificar un nodo TEXTO del DOM se usa innerHTML";
 
-        console.log(div2);
+        //se puede modificar tambien el estilo 
+        h1.style.color = "purple"; //cambia el color de letra
+        h1.style.background ="blue"; //cambia el color de fondo
 
+        //para acceder al parrafo:
+
+        var parrafo = document.getElementById("parrafo");
+
+
+        //para un eevento en el boton, al hacer clic en el
+        //boton se realizará la accion dentro de la funcion
+        
+        var boton = document.getElementById("boton");
+
+        boton.onclick = function(){ //funcion anonina, ya que no tiene nombre
+            parrafo.style.color = "olive"; //se cambia el color del parrafo
+        }
+
+        //ejemplo con funcion ya definida (no anonima)
+        var boton2 = document.getElementById("boton2");
+
+        function cambiar (){
+            parrafo.style.color = "blue";
+        }
+
+        boton2.onclick = cambiar; //se manda a llamar a la funcion ya definida
+        /* No se ponen parentesis al llanar  a la
+        funcion, ya que se desea que se ejecute al hacer clic 
+        en el boton, de lo contrario, con los ´parentesis
+        se ejecuta aun cuando no se de clic */
+
+        //para obtener elementos por medio del nombre de la clase
+
+        var parrafo = document.getElementsByClassName("miClase");
+
+        console.log(parrafo);
+
+        /* en caso de que haya mas de un elemento con
+        el nombre de la clase indicada como parametro, se devuelve
+        un arreglo con los nodos encontrados */
+
+        //para acceder a los elementos del arreglo:
+
+        for (var i=0; i<parrafo.length; i++){
+            console.log("Este es el parrafo " + i);
+            console.log(parrafo[i]);
+        }
+
+         //se puede hacer lo mismo con querySelector
+
+        //regresa el primer elemeto que encuentre que coincida con el parametro
+        var mi_clase = document.querySelector("miClase");
+        console.log("con querySelector " + mi_clase);
+
+        
+
+
+        
+
+    
         //se obtiene los elementos cuya etiqueta sea igual a la del parametro
 
         var parrafos = document.getElementsByTagName("p");
 
         console.log(parrafos);
 
-        //para obtener elementos de css
-        var mi_clase = document.querySelectorAll(".miClase");
-
-        console.log(mi_clase);
+       
 
     </script>
     
