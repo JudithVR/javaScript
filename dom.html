@@ -12,10 +12,11 @@
 <body>
     <div id="mi_div" class="miClase">
         <h1 id="titulo">Para buscar un elemento del DOM</h1>
-        <p id ="parrafo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt doloribus, pariatur fugit dolor corrupti officiis earum placeat esse maiores molestias, assumenda provident. Repudiandae, excepturi. Reiciendis delectus exercitationem molestiae omnis nostrum?</p>
-        <p id="parrafo" class="miClase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, odio magni officiis necessitatibus hic quaerat nobis accusantium ducimus illum, quo dolorem, earum reprehenderit perferendis tempore blanditiis repudiandae praesentium at explicabo.</p>
+        <p id ="parrafo1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt doloribus, pariatur fugit dolor corrupti officiis earum placeat esse maiores molestias, assumenda provident. Repudiandae, excepturi. Reiciendis delectus exercitationem molestiae omnis nostrum?</p>
+        <p id="parrafo2" class="miClase">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, odio magni officiis necessitatibus hic quaerat nobis accusantium ducimus illum, quo dolorem, earum reprehenderit perferendis tempore blanditiis repudiandae praesentium at explicabo.</p>
         <button id="boton">Cambiar</button>
-        <button id="boton2">Csmbiar2</button>
+        <button id="boton2">Cambiar2</button>
+        <button id="boton3">Cambiar3</button>
     </div>
 
     <script>
@@ -34,12 +35,12 @@
         h1.innerHTML = "Para modificar un nodo TEXTO del DOM se usa innerHTML";
 
         //se puede modificar tambien el estilo 
-        h1.style.color = "purple"; //cambia el color de letra
-        h1.style.background ="blue"; //cambia el color de fondo
+        h1.style.color = "blue"; //cambia el color de letra
+        h1.style.background ="pink"; //cambia el color de fondo
 
         //para acceder al parrafo:
 
-        var parrafo = document.getElementById("parrafo");
+        var parrafo = document.getElementById("parrafo2");
 
 
         //para un eevento en el boton, al hacer clic en el
@@ -48,14 +49,14 @@
         var boton = document.getElementById("boton");
 
         boton.onclick = function(){ //funcion anonina, ya que no tiene nombre
-            parrafo.style.color = "olive"; //se cambia el color del parrafo
+            parrafo2.style.color = "olive"; //se cambia el color del parrafo
         }
 
         //ejemplo con funcion ya definida (no anonima)
         var boton2 = document.getElementById("boton2");
 
         function cambiar (){
-            parrafo.style.color = "blue";
+            parrafo1.style.color = "blue";
         }
 
         boton2.onclick = cambiar; //se manda a llamar a la funcion ya definida
@@ -84,22 +85,38 @@
          //se puede hacer lo mismo con querySelector
 
         //regresa el primer elemeto que encuentre que coincida con el parametro
-        var mi_clase = document.querySelector("miClase");
-        console.log("con querySelector " + mi_clase);
+        var parrafoQuery = document.querySelector('p');
+        console.log("con querySelector: ");
+        console.log(parrafoQuery);
 
-        
+        var parrafoQueryAll = document.querySelectorAll('p');
+        console.log("Con querySelectorAll:");
+        console.log(parrafoQueryAll);
 
-
-        
-
-    
         //se obtiene los elementos cuya etiqueta sea igual a la del parametro
 
         var parrafos = document.getElementsByTagName("p");
 
-        console.log(parrafos);
+        console.log(parrafos);   
 
-       
+        //Eventos con botones
+
+        //detecta un clic sobre el boton
+        boton3.addEventListener('click',function(){
+            console.log('Me diste un click');
+        });
+
+        //detecta cuando el puntero pasa sobre el boton
+
+        boton3.addEventListener('mouseover',function(){
+            console.log('He detectado el raton');
+        });
+
+         //detecta cuando el puntero se aleja del boton
+
+         boton3.addEventListener('mouseout',function(){
+            console.log('He detectado que el raton se alejo');
+        });
 
     </script>
     
